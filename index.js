@@ -5,7 +5,7 @@ const Stripe = require("stripe");
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+console.log("STRIPE_SECRET_KEY exists?", !!process.env.STRIPE_SECRET_KEY);
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 app.get("/", (req, res) => {
